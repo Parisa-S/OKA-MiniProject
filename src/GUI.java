@@ -61,8 +61,10 @@ public class GUI extends JFrame{
 		init(result);
 	}
 	public void init(List<String> result){	
-		File dir = new File("D:/SKE/year3/Okayama U/MiniProject");
+		//File dir = new File("D:/SKE/year3/Okayama U/MiniProject");
+		File dir = new File("src/image/");
 		if(dir.isDirectory()){
+			System.out.println();
 			numOfPic = dir.listFiles().length;
 			if(numOfPic == alreadyPick.size()){
 				writeLogFile(result);
@@ -82,7 +84,7 @@ public class GUI extends JFrame{
 				i--;
 				continue;
 			}
-			ImageIcon icon = new ImageIcon("D:/SKE/year3/Okayama U/MiniProject/" + randompic+".jpg");
+			ImageIcon icon = new ImageIcon("src/image/" + randompic+".jpg");
 			Image img = icon.getImage();
 			Image newImg = img.getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
 			ImageIcon file = new ImageIcon(newImg);
